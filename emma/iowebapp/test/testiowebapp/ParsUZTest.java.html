@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>ParsUZTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">iowebapp (2016-06-14 22:44:33)</a> &gt; <a href="../../index.html" class="el_group">iowebapp</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">testiowebapp</a> &gt; <span class="el_source">ParsUZTest.java</span></div><h1>ParsUZTest.java</h1><pre class="source lang-java linenums">package testiowebapp;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.junit.Test;
+
+import iowebapp.CalendarEvent;
+import iowebapp.ParsUZ;
+
+<span class="fc" id="L15">public class ParsUZTest {</span>
+	
+	
+	@Test
+	public void testParsUZ() {
+		try {
+<span class="fc" id="L21">			ParsUZ parsUZ = new ParsUZ(&quot;http://plan.uz.zgora.pl/grupy_plan.php?pId_Obiekt=16669&quot;);</span>
+<span class="fc" id="L22">			ParsUZ parsUZ2 = new ParsUZ(&quot;http://plan.uz.zgora.pl/grupy_plan.php?pId_Obiekt=16669&quot;);</span>
+<span class="fc" id="L23">			assertNotNull(parsUZ);</span>
+<span class="fc" id="L24">			assertEquals(parsUZ, parsUZ);</span>
+<span class="nc" id="L25">			assertSame(parsUZ2, parsUZ);</span>
+<span class="nc" id="L26">			assertNotSame(parsUZ, parsUZ);</span>
+<span class="nc" id="L27">		} catch (IOException e) {</span>
+<span class="nc" id="L28">			e.printStackTrace();</span>
+		}
+		
+<span class="nc" id="L31">	}</span>
+
+
+
+//	@Test
+//	public void testShowEvent() {
+//		ParsUZ parsUZ = new ParsUZ(&quot;http://plan.uz.zgora.pl/grupy_plan.php?pId_Obiekt=16669&quot;);
+//		CalendarEvent t = new CalendarEvent(&quot;testShowEvent&quot;, new Date(2016,1,1,1,1,1), new Date(2016,1,1,1,1,1),
+//				new Date(2016,1,1,1,1,1), new Date(2016,1,1,1,1,1), &quot;lokacja&quot;, &quot;opis&quot;, false);
+//		assertEquals(&quot;testCE_False\nlokacja\nopis\nData rozpoczecia: &quot;+ t.getDateStart() +&quot;\n&quot;
+//					+ &quot;Data zakończenia: &quot; + t.getDateEnd() + &quot;\nData Utworzenia: &quot; + t.getDateCreated() + &quot;\n&quot;
+//					+ &quot;Data modyfikacji: &quot; + t.getDateModified() + &quot;\n&quot; , parsUZ.showEvent(t));
+//		
+//		
+//		assertSame(parsUZ.showEvent(t),parsUZ.showEvent(t));
+//	}
+
+	@Test
+	public void testGetEvents() {
+<span class="fc" id="L50">		List&lt;CalendarEvent&gt; events = new ArrayList&lt;CalendarEvent&gt;();</span>
+		
+<span class="fc" id="L52">		assertNotNull(events);</span>
+<span class="fc" id="L53">		assertSame(events, events);</span>
+<span class="fc" id="L54">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>iowebapp (2016-06-14 22:44:33)</div></body></html>

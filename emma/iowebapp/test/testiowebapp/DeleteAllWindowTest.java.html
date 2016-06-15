@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>DeleteAllWindowTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">iowebapp (2016-06-14 22:44:33)</a> &gt; <a href="../../index.html" class="el_group">iowebapp</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">testiowebapp</a> &gt; <span class="el_source">DeleteAllWindowTest.java</span></div><h1>DeleteAllWindowTest.java</h1><pre class="source lang-java linenums">package testiowebapp;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+
+import java.awt.Button;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.Toolkit;
+import java.util.Date;
+
+import org.junit.Test;
+
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.vaadin.data.util.AbstractBeanContainer;
+import com.vaadin.data.util.BeanItemContainer;
+import com.vaadin.server.FontAwesome;
+import com.vaadin.server.Sizeable;
+import com.vaadin.shared.Position;
+import com.vaadin.ui.Component;
+import com.vaadin.ui.Notification;
+import com.vaadin.ui.VerticalLayout;
+
+import iowebapp.CalendarEvent;
+import iowebapp.DeleteAllWindow;
+
+<span class="fc" id="L29">public class DeleteAllWindowTest {</span>
+	
+	@Test
+	public void testDeleteAllWindow() {
+		
+<span class="fc" id="L34">		BeanItemContainer&lt;CalendarEvent&gt; eventsContainer = new BeanItemContainer&lt;CalendarEvent&gt;(CalendarEvent.class);</span>
+<span class="fc" id="L35">		eventsContainer.addBean(new CalendarEvent(&quot;Urodziny&quot;, new Date(2016, 9, 25, 16, 0, 0), </span>
+<span class="fc" id="L36">				new Date(2016, 9, 25, 20, 0, 0), new Date(2016, 5, 5, 16, 47, 13), </span>
+<span class="fc" id="L37">				new Date(2016, 5, 5, 16, 47, 13), &quot;Zielona Gora&quot;, &quot;Impreza urodzinowa Mariana&quot;, false));</span>
+		
+<span class="fc" id="L39">		DeleteAllWindow daw = new DeleteAllWindow(eventsContainer);</span>
+<span class="fc" id="L40">		assertNotNull(daw);</span>
+<span class="fc" id="L41">		assertEquals(daw, daw);</span>
+<span class="fc" id="L42">		final Toolkit size = Toolkit.getDefaultToolkit();</span>
+<span class="fc" id="L43">		assertNotNull(size);</span>
+<span class="fc" id="L44">		assertEquals(size, size);</span>
+		
+<span class="fc" id="L46">		VerticalLayout mainVLay = new VerticalLayout();</span>
+<span class="fc" id="L47">		assertNotNull(mainVLay);</span>
+<span class="fc" id="L48">		assertEquals(mainVLay, mainVLay);</span>
+<span class="fc" id="L49">		mainVLay.setMargin(true);</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">		boolean margin = mainVLay.getMargin() != null;</span>
+<span class="fc" id="L51">		assertTrue(margin);</span>
+<span class="fc" id="L52">		mainVLay.setSizeFull();</span>
+		
+<span class="fc" id="L54">		Label warningL = new Label(&quot;Are you sure you want to delete all events?&quot;);</span>
+<span class="fc" id="L55">		assertNotNull(warningL);</span>
+<span class="fc" id="L56">		assertEquals(warningL, warningL);</span>
+<span class="fc" id="L57">		mainVLay.setWidthUndefined();</span>
+<span class="fc" id="L58">		assertSame(warningL.getWidth(), warningL.getWidth());</span>
+		//assertNotNull(mainVLay.getComponentAlignment((Component) warningL));
+		
+<span class="fc" id="L61">		GridLayout buttonsGLay = new GridLayout(2, 1);</span>
+<span class="fc" id="L62">		assertNotNull(buttonsGLay);</span>
+<span class="fc" id="L63">		assertEquals(buttonsGLay, buttonsGLay);</span>
+<span class="fc" id="L64">		assertSame(buttonsGLay.getColumns(), buttonsGLay.getColumns());</span>
+		//mainVLay.addComponent((Component) buttonsGLay);
+		//assertNotNull(mainVLay.getComponentIndex((Component) buttonsGLay));
+		//assertNotNull(mainVLay.getComponentAlignment((Component) buttonsGLay));
+		
+<span class="fc" id="L69">		Button yesB = new Button(&quot;Yes&quot;);</span>
+<span class="fc" id="L70">		assertNotNull(yesB);</span>
+		//((Component) yesB).setIcon(FontAwesome.CHECK);
+		//assertEquals( ((Component) yesB).getIcon(), ((Component) yesB).getIcon());
+	//	((Sizeable) yesB).setWidthUndefined();
+<span class="fc" id="L74">		assertSame(yesB.getWidth(), yesB.getWidth());</span>
+		
+<span class="fc" id="L76">		Button noB = new Button(&quot;No&quot;);</span>
+<span class="fc" id="L77">		assertNotNull(noB);</span>
+	//	((Component) noB).setIcon(FontAwesome.CLOSE);
+	//	assertEquals(((Component) noB).getIcon(), ((Component) noB).getIcon());
+		//((Sizeable) noB).setWidthUndefined();
+<span class="fc" id="L81">		assertSame(noB.getWidth(), noB.getWidth());</span>
+		
+<span class="fc" id="L83">	}</span>
+
+	
+	@Test
+	public void TestbuttonClick(){		
+<span class="fc" id="L88">		Notification deleteSuccess = new Notification(&quot;Success...&quot;);</span>
+<span class="fc" id="L89">		assertNotNull(deleteSuccess);</span>
+<span class="fc" id="L90">		deleteSuccess.setPosition(Position.TOP_CENTER);</span>
+<span class="fc" id="L91">		assertEquals(deleteSuccess.getPosition(), deleteSuccess.getPosition());</span>
+<span class="fc" id="L92">		deleteSuccess.setDelayMsec(1000);</span>
+<span class="fc" id="L93">		assertEquals(deleteSuccess.getDelayMsec(), deleteSuccess.getDelayMsec());</span>
+<span class="fc" id="L94">		AbstractBeanContainer&lt;CalendarEvent, CalendarEvent&gt; eventsContainer = null;</span>
+//		eventsContainer.removeAllItems();
+//		assertNotNull(eventsContainer);
+//		assertEquals(eventsContainer, eventsContainer);		
+<span class="fc" id="L98">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>iowebapp (2016-06-14 22:44:33)</div></body></html>

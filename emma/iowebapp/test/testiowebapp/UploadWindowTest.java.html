@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>UploadWindowTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">iowebapp (2016-06-14 22:44:33)</a> &gt; <a href="../../index.html" class="el_group">iowebapp</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">testiowebapp</a> &gt; <span class="el_source">UploadWindowTest.java</span></div><h1>UploadWindowTest.java</h1><pre class="source lang-java linenums">package testiowebapp;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import org.junit.Test;
+
+import com.vaadin.data.util.BeanItemContainer;
+
+import iowebapp.CalendarEvent;
+
+import iowebapp.UploadWindow;
+
+<span class="fc" id="L15">public class UploadWindowTest {</span>
+
+	@Test
+	public void testUploadWindow() {
+<span class="fc" id="L19">		BeanItemContainer&lt;CalendarEvent&gt; eventsContainer = new BeanItemContainer&lt;CalendarEvent&gt;(CalendarEvent.class);</span>
+<span class="fc" id="L20">		eventsContainer.addBean(new CalendarEvent(&quot;Urodziny&quot;, new Date(2016, 9, 25, 16, 0, 0), </span>
+<span class="fc" id="L21">				new Date(2016, 9, 25, 20, 0, 0), new Date(2016, 5, 5, 16, 47, 13), </span>
+<span class="fc" id="L22">				new Date(2016, 5, 5, 16, 47, 13), &quot;Zielona Gora&quot;, &quot;Impreza urodzinowa Mariana&quot;, false));</span>
+		
+<span class="fc" id="L24">		assertNotNull(eventsContainer);</span>
+		
+<span class="fc" id="L26">		UploadWindow uw = new UploadWindow(eventsContainer);</span>
+<span class="fc" id="L27">		assertNotNull(uw);</span>
+<span class="fc" id="L28">		assertEquals(uw, uw);</span>
+<span class="fc" id="L29">	}</span>
+
+	@Test
+	public void testStringToDateConvert() {
+<span class="fc" id="L33">		BeanItemContainer&lt;CalendarEvent&gt; eventsContainer = new BeanItemContainer&lt;CalendarEvent&gt;(CalendarEvent.class);</span>
+<span class="fc" id="L34">		eventsContainer.addBean(new CalendarEvent(&quot;Urodziny&quot;, new Date(2016, 9, 25, 16, 0, 0), </span>
+<span class="fc" id="L35">				new Date(2016, 9, 25, 20, 0, 0), new Date(2016, 5, 5, 16, 47, 13), </span>
+<span class="fc" id="L36">				new Date(2016, 5, 5, 16, 47, 13), &quot;Zielona Gora&quot;, &quot;Impreza urodzinowa Mariana&quot;, false));</span>
+<span class="fc" id="L37">		UploadWindow uw = new UploadWindow(eventsContainer);</span>
+<span class="fc" id="L38">		String string = new String(&quot;:20161028T160000&quot;);</span>
+<span class="fc" id="L39">		String krotszyString = new String(&quot;;VALUE=DATE:20161028&quot;);</span>
+<span class="fc" id="L40">		Date data = new Date(116,10,28,16,0,0);</span>
+<span class="fc" id="L41">		Date data1 = new Date(116,10,28);</span>
+<span class="fc" id="L42">		assertEquals(data, uw.stringToDateConvert(string));</span>
+<span class="fc" id="L43">		assertEquals(data1, uw.stringToDateConvert(krotszyString));</span>
+		
+<span class="fc" id="L45">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>iowebapp (2016-06-14 22:44:33)</div></body></html>

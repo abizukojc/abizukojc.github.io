@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CalendarEvent.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">iowebapp (2016-06-14 22:44:33)</a> &gt; <a href="../../index.html" class="el_group">iowebapp</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">iowebapp</a> &gt; <span class="el_source">CalendarEvent.java</span></div><h1>CalendarEvent.java</h1><pre class="source lang-java linenums">package iowebapp;
+
+import java.util.Date;
+
+/**
+ * Klasa, ktĂłra reprezentuje wydarzenie uĹĽywane w kalendarzu.
+ * 
+ * @author Krzysztof Perchlicki
+ */
+public class CalendarEvent {
+	/**
+	 * Nazwa wydarzenia.
+	 */
+	private String title;
+	/**
+	 * Data startu wydarzenia.
+	 */
+	private Date dateStart;
+	/**
+	 * Data koĹ„ca wydarzenia.
+	 */
+	private Date dateEnd;
+	/**
+	 * Data utworzenia wydarzenia.
+	 */
+	private Date dateCreated;
+	/**
+	 * Data modyfikacji wydarzenia.
+	 */
+	private Date dateModified;
+	/**
+	 * Miejsce, w ktĂłrym zajdzie wydarzenie.
+	 */
+	private String location;
+	/**
+	 * SzczegĂłĹ‚y, opis wydarzenia.
+	 */
+	private String description;
+	/**
+	 * Pole, ktĂłre daje informacje czy wydarzenie zachodzi przez caĹ‚y dzieĹ„.
+	 */
+	private boolean allDay;
+
+	/**
+	 * @param title
+	 * @param dateStart
+	 * @param dateEnd
+	 * @param location
+	 * @param description
+	 * @param allDay
+	 */
+	public CalendarEvent(final String title, final Date dateStart, final Date dateEnd, final Date dateCreated,
+			final Date dateModified, final String location, final String description, final boolean allDay) {
+<span class="fc" id="L54">		super();</span>
+<span class="fc" id="L55">		this.title = title;</span>
+<span class="fc" id="L56">		this.dateStart = dateStart;</span>
+<span class="fc" id="L57">		this.dateEnd = dateEnd;</span>
+<span class="fc" id="L58">		this.dateCreated = dateCreated;</span>
+<span class="fc" id="L59">		this.dateModified = dateModified;</span>
+<span class="fc" id="L60">		this.location = location;</span>
+<span class="fc" id="L61">		this.description = description;</span>
+<span class="fc" id="L62">		this.allDay = allDay;</span>
+<span class="fc" id="L63">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola title.
+	 * 
+	 * @return referencja do title.
+	 */
+	public String getTitle() {
+<span class="fc" id="L71">		return title;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ title.
+	 * 
+	 * @param title
+	 *            obiekt klasy String (nazwa wydarzenia).
+	 */
+	public void setTitle(final String title) {
+<span class="fc" id="L81">		this.title = title;</span>
+<span class="fc" id="L82">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola dateStart.
+	 * 
+	 * @return referencja do dateStart.
+	 */
+	public Date getDateStart() {
+<span class="fc" id="L90">		return dateStart;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ dateStart.
+	 * 
+	 * @param dateStart
+	 *            obiekt klasy Date (data startu wydarzenia).
+	 */
+	public void setDateStart(final Date dateStart) {
+<span class="fc" id="L100">		this.dateStart = dateStart;</span>
+<span class="fc" id="L101">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola dateEnd.
+	 * 
+	 * @return referencja do dateEnd.
+	 */
+	public Date getDateEnd() {
+<span class="fc" id="L109">		return dateEnd;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ dateEnd.
+	 * 
+	 * @param dateEnd
+	 *            obiekt klasy Date (data koďż˝ca wydarzenia).
+	 */
+	public void setDateEnd(final Date dateEnd) {
+<span class="fc" id="L119">		this.dateEnd = dateEnd;</span>
+<span class="fc" id="L120">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola dateCreated.
+	 * 
+	 * @return referencja do dateCreated.
+	 */
+	public Date getDateCreated() {
+<span class="fc" id="L128">		return dateCreated;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ dateCreated.
+	 * 
+	 * @param dateCreated
+	 *            obiekt klasy Date (data utworzenia wydarzenia).
+	 */
+	public void setDateCreated(final Date dateCreated) {
+<span class="fc" id="L138">		this.dateCreated = dateCreated;</span>
+<span class="fc" id="L139">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola dateModified.
+	 * 
+	 * @return referencja do dateModified.
+	 */
+	public Date getDateModified() {
+<span class="fc" id="L147">		return dateModified;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ dateModified.
+	 * 
+	 * @param dateModified
+	 *            obiekt klasy Date (data modyfikacji wydarzenia).
+	 */
+	public void setDateModified(final Date dateModified) {
+<span class="fc" id="L157">		this.dateModified = dateModified;</span>
+<span class="fc" id="L158">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola location.
+	 * 
+	 * @return referencja do location.
+	 */
+	public String getLocation() {
+<span class="fc" id="L166">		return location;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ location.
+	 * 
+	 * @param location
+	 *            obiekt klasy String (lokalizacja wydarzenia).
+	 */
+	public void setLocation(final String location) {
+<span class="fc" id="L176">		this.location = location;</span>
+<span class="fc" id="L177">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola description.
+	 * 
+	 * @return referencja do description.
+	 */
+	public String getDescription() {
+<span class="fc" id="L185">		return description;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ description.
+	 * 
+	 * @param description
+	 *            obiekt klasy String (opis wydarzenia).
+	 */
+	public void setDescription(final String description) {
+<span class="fc" id="L195">		this.description = description;</span>
+<span class="fc" id="L196">	}</span>
+
+	/**
+	 * Metoda, ktĂłra daje dostÄ™p do pola allDay.
+	 * 
+	 * @return referencja do allDay.
+	 */
+	public boolean isAllDay() {
+<span class="fc" id="L204">		return allDay;</span>
+	}
+
+	/**
+	 * Metoda, ktĂłra pozwala zmieniÄ‡ allDay.
+	 * 
+	 * @param allDay
+	 *            obiekt klasy boolean (czy wydarzenia trwa caĹ‚y dzieĹ„).
+	 */
+	public void setAllDay(final boolean allDay) {
+<span class="fc" id="L214">		this.allDay = allDay;</span>
+<span class="fc" id="L215">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>iowebapp (2016-06-14 22:44:33)</div></body></html>
